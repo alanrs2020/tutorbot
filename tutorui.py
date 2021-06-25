@@ -5,7 +5,7 @@ import main as bot
 app = Flask(__name__)
 
 
-@app.route("/tutorbot", method=["POST"])
+@app.route("/tutorbot", methods=["POST"])
 def response():
     query = dict(request.form)["query"]
     result = bot.getMessage(query)
