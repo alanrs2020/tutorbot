@@ -1,1 +1,1 @@
-web: gunicorn app:tutorui
+web: gunicorn app:app
