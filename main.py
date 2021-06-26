@@ -15,7 +15,7 @@ nltk.download("punkt", quiet=True)
 def greeting_response(text):
     text = text.lower()
 
-    bot_greetings = ['hi', 'hello', 'hey', 'hy']
+    bot_greetings = ['Hi', 'Hello how can I help you', 'Hey', 'Hi, how can i help you']
 
     user_greetings = ['hi', 'hello', 'hey', 'hy', 'halo']
     for word in text.split():
@@ -61,7 +61,7 @@ def bot_reply(message, sentence_list):
         if j > 2:
             break
 
-        if reply_flag == 0:
+    if reply_flag == 0:
             bot_reply = bot_reply + " " + "Sorry, I don't have an answer"
     sentence_list.remove(message)
     return bot_reply
@@ -80,13 +80,12 @@ def getText(message):
             article.parse()
             article.nlp()
             sentence_list = article.text
-        except Exception:
-            break
-        finally:
-
             token_list1 = nltk.sent_tokenize(sentence_list)
+        except Exception:
             i = i + 1
-            if i == 2:
+        finally:
+            i = i + 1
+            if i > 1:
                 break
     try:
         sentence_list = wiki.summary(message)
@@ -100,9 +99,9 @@ def getText(message):
         return token_list1 + token_list2
 
 
-print("Tutor Bot: How can I help you ?")
+# print("Tutor Bot: How can I help you ?")
 
-close_chat = ["bye,'quit", 'see you', 'exit']
+close_chat = ['bye', 'quit', 'see you', 'exit']
 
 
 def getMessage(message):
