@@ -53,12 +53,12 @@ def bot_reply(message, sentence_list):
 
     j = 0
     for i in range(len(index)):
-        if similarity_score_list[index[i]] > 0.4:
+        if similarity_score_list[index[i]] > 0.0:
             bot_reply = bot_reply + " " + sentence_list[index[i]]
             reply_flag = 1
             j = j + 1
 
-        if j > 2:
+        if j > 4:
             break
 
     if reply_flag == 0:
