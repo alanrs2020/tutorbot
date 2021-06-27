@@ -9,7 +9,7 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-nltk.download("punkt", quiet=True)
+nltk.download("punkt", "/tmp/build_6c6c4894/.heroku/python/nltk_data/")
 
 
 def greeting_response(text):
