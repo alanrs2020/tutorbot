@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 @app.route("/tutorbot", methods=["POST"])
 def response():
-    query = dict(request.form)["query"]
+    print(dict(request.json))
+    query = dict(request.json)['query']
     result = bot.getMessage(query)
     return jsonify({"response": result+" "+time.ctime()})
 
