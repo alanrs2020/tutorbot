@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 import time
-import main as bot
+import bot as bot
 
 app = Flask(__name__)
 
@@ -9,7 +9,8 @@ app = Flask(__name__)
 def response():
     print(dict(request.json))
     query = dict(request.json)['query']
-    result = bot.getMessage(query)
+    result = bot.chat(query)
+
     return jsonify({"response": result+" "+time.ctime()})
 
 
