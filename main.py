@@ -107,7 +107,7 @@ close_chat = ['bye', 'quit', 'see you', 'exit']
 def getMessage(message):
     if message.lower() in close_chat:
         # print("Tutor bot: See you later, bye !!")
-        return "Tutor bot: See you later, bye !!"
+        return "See you later, bye !!"
 
     else:
         if greeting_response(message) is not None:
